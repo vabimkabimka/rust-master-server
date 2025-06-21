@@ -22,3 +22,5 @@ async def register(request: Request):
 @app.get("/servers")
 def get_servers():
     return servers
+
+
