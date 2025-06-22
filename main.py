@@ -1,6 +1,5 @@
 # main.py
 import os
-import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -24,7 +23,3 @@ async def register(request: Request):
 @app.get("/servers")
 def get_servers():
     return servers
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # Порт з середовища або 8000 за замовчуванням
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
